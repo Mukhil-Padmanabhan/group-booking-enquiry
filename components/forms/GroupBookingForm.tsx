@@ -9,6 +9,7 @@ import Accordion from '@/components/ui/Accordion';
 import ContactDetails from './sections/ContactDetails';
 import BookingDetails from './sections/BookingDetails';
 import RoomRequirements from './sections/RoomRequirements';
+import LanguageSwitcher from '@/components/ui/LanguageSwitcher';
 
 import { getFullSchema } from '@/lib/validationSchemas';
 import { useTranslations } from '@/i18n/client';
@@ -100,7 +101,7 @@ export default function GroupBookingForm() {
           role="progressbar"
         />
       </div> */}
-
+    <LanguageSwitcher />
       <FormProvider {...methods}>
         <form
           role='form'
