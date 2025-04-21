@@ -1,0 +1,127 @@
+{
+  "form": {
+    "pageTitle": "Gruppenbuchungsanfrage",
+    "submit": "Anfrage absenden",
+    "success": "Ihre Buchung wurde eingereicht!",
+    "error": "Etwas ist schief gelaufen. Bitte versuchen Sie es erneut.",
+    "contactDetails": "Kontaktdaten",
+    "bookingDetails": "Buchungsdetails",
+    "roomRequirements": "Zimmeranforderungen",
+    "pageDescription": "Planen Sie eine Gruppenveranstaltung und benötigen 10 oder mehr Zimmer? Füllen Sie das untenstehende Formular aus! Sobald wir Ihre Anfrage erhalten haben, wird sich unser Gruppenbuchungsteam mit Ihnen in Verbindung setzen."
+  },
+  "fields": {
+    "title": "Anrede",
+    "firstName": "Vorname",
+    "lastName": "Nachname",
+    "phone": "Telefonnummer",
+    "email": "E-Mail-Adresse",
+    "bookerType": "Welche Art von Bucher sind Sie?",
+    "stayPurpose": "Bleibt Ihre Gruppe geschäftlich oder privat?",
+    "isSchoolGroup": "Bitte aktivieren Sie dieses Kästchen, wenn Sie für eine Schul- oder Jugendgruppe buchen.",
+    "visitReason": "Was ist der Grund für den Besuch Ihrer Gruppe?",
+    "hotel": "Hotel",
+    "checkInDate": "Check-in",
+    "checkOutDate": "Check-out",
+    "package": "Pakettyp",
+    "hasChildren": "Reisen/übernachten mit Kindern (2–15 Jahre).",
+    "needsAccessibleRoom": "Barrierefreies Zimmer wird benötigt.",
+    "roomsSingle": "Einzelbelegung",
+    "roomsDouble": "Doppelbelegung",
+    "roomsTwin": "Zweibettzimmer",
+    "additionalInfo": "Zusätzliche Informationen (optional)",
+    "continue": "Weiter"
+  },
+  "placeholders": {
+    "hotel": "Hotel eingeben",
+    "additionalInfo": "Lassen Sie uns wissen, wenn Sie besondere Wünsche haben..."
+  },
+  "buttons": {
+    "submit": "Anfrage absenden"
+  },
+  "contactDetails": {
+    "firstName": "Vorname",
+    "firstNameValidation": "Vorname ist erforderlich",
+    "lastName": "Nachname",
+    "lastNameValidation": "Nachname ist erforderlich",
+    "titleValidation": "Titel ist erforderlich",
+    "invalidEmail": "Bitte eine gültige E-Mail-Adresse eingeben",
+    "invalidPhone": "Bitte eine gültige Telefonnummer eingeben"
+  },
+  "booking": {
+    "bookerType": "Welche Art von Bucher sind Sie?",
+    "bookerOptions": {
+      "personal": "Privatperson",
+      "business": "Geschäftlich",
+      "tmc": "Travel Management Company",
+      "agent": "Reisebüro / Reiseveranstalter"
+    },
+    "companyName": "Firmenname",
+    "stayPurpose": "Ist Ihr Aufenthalt geschäftlich oder privat?",
+    "purposeOptions": {
+      "business": "Geschäftlich",
+      "leisure": "Freizeit"
+    },
+    "schoolGroup": "Bitte aktivieren Sie dieses Kästchen, wenn Sie für eine Schul- oder Jugendgruppe buchen.",
+    "visitReason": "Was ist der Grund für den Besuch Ihrer Gruppe?",
+    "selectReason": "Grund auswählen",
+    "reasonOptions": {
+      "wedding": "Hochzeit",
+      "event": "Veranstaltung",
+      "sports": "Sport",
+      "other": "Sonstiges"
+    },
+    "bookingDetailsTitle": "Buchungsdetails",
+    "bookingDetailsNote": "Unser Team wird versuchen, die Wünsche Ihrer Gruppe in Bezug auf Hotels und Termine zu berücksichtigen. Falls das nicht möglich ist, schlagen wir Ihnen die besten Alternativen vor.",
+    "hotel": "Hotel",
+    "hotelPlaceholder": "Hotel eingeben",
+    "checkIn": "Anreise",
+    "checkOut": "Abreise",
+    "package": "Paketart",
+    "packageOptions": {
+      "breakfast": "Premier Inn Frühstück",
+      "mealDeal": "Meal Deal (Abendessen, Getränk und Frühstück)"
+    },
+    "bookerTypeRequired": "Bitte wählen Sie einen Buchungstyp.",
+    "companyNameRequired": "Der Firmenname ist erforderlich.",
+    "stayPurposeRequired": "Bitte geben Sie den Zweck des Aufenthalts an.",
+    "visitReasonRequired": "Bitte wählen Sie einen Grund für den Gruppenbesuch.",
+    "hotelRequired": "Bitte wählen Sie ein Hotel aus.",
+    "checkInRequired": "Bitte wählen Sie ein Anreisedatum.",
+    "checkOutRequired": "Bitte wählen Sie ein Abreisedatum.",
+    "packageRequired": "Bitte wählen Sie einen Pakettyp aus"
+  },
+  "room": {
+    "description": "Wählen Sie die Anzahl der benötigten Zimmer nach Typ und Belegung.",
+    "single": "Einzelbelegung",
+    "singleDescription": "1 Erwachsener",
+    "double": "Doppelbelegung",
+    "doubleDescription": "2 Erwachsene",
+    "twin": "Zweibettzimmer",
+    "twinDescription": "2 Erwachsene",
+    "hasChildren": "Reisen/Übernachten mit Kindern (2–15 Jahre)",
+    "family2": "Familie mit 2 Personen",
+    "family2Description": "1 Erwachsener + 1 Kind",
+    "family3A": "Familie mit 3 Personen",
+    "family3ADescription": "2 Erwachsene + 1 Kind",
+    "family3B": "Familie mit 3 Personen",
+    "family3BDescription": "1 Erwachsener + 2 Kinder",
+    "family4": "Familie mit 4 Personen",
+    "family4Description": "2 Erwachsene + 2 Kinder",
+    "needsAccessibleRoom": "Barrierefreies Zimmer erforderlich",
+    "accessibleSingle": "Barrierefreies Einzelzimmer",
+    "accessibleSingleDescription": "1 Erwachsener mit besonderen Bedürfnissen",
+    "accessibleDouble": "Barrierefreies Doppelzimmer",
+    "accessibleDoubleDescription": "2 Erwachsene mit besonderen Bedürfnissen",
+    "accessibleTwin": "Barrierefreies Zweibettzimmer",
+    "accessibleTwinDescription": "2 Erwachsene mit besonderen Bedürfnissen",
+    "total": "Gesamt",
+    "rooms": "Zimmer",
+    "roomSelectionInvalid": "Bitte wählen Sie mindestens ein Zimmer aus.",
+    "invalidRoomCount": "Die Zimmeranzahl muss eine positive Zahl sein.",
+    "accessibleRoomRequired": "Bitte geben Sie die Anzahl der barrierefreien Zimmer ein.",
+    "childrenRoomRequired": "Bitte geben Sie Details zu Kinderzimmern ein.",
+    "accessibleRequirement": "Bitte wählen Sie mindestens ein barrierefreies Zimmer aus.",
+    "familyRequirement": "Bitte wählen Sie mindestens ein Familienzimmer aus.",
+    "standardRequirement": "Bitte wählen Sie mindestens ein Standardzimmer aus."
+  }
+}

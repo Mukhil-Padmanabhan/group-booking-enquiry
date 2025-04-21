@@ -1,0 +1,49 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model GroupBooking {
+  id              String   @id @default(cuid())
+  createdAt       DateTime @default(now())
+
+  // Contact Details
+  title           String
+  firstName       String
+  lastName        String
+  email           String
+  phone           String
+
+  // Booking Details
+  bookerType      String   // Personal, Business, TMC, etc.
+  stayPurpose     String   // Business or Leisure
+  visitReason     String   // Wedding, Event, etc.
+  hotel           String
+  isSchoolGroup   Boolean
+  package         String
+  checkInDate     DateTime
+  checkOutDate    DateTime
+
+  // Rooms
+  roomsSingle     Int
+  roomsDouble     Int
+  roomsTwin       Int
+  hasChildren     Boolean
+  needsAccessibleRoom Boolean
+
+  family2         Int
+  family3A        Int
+  family3B        Int
+  family4         Int
+
+  accessibleSingle Int
+  accessibleDouble Int
+  accessibleTwin   Int
+
+  additionalInfo   String?
+  locale           String
+}

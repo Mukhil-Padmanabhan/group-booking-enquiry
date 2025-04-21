@@ -1,0 +1,128 @@
+{
+  "form": {
+    "pageTitle": "Group Booking Enquiry",
+    "submit": "Submit Enquiry",
+    "success": "Your booking was submitted!",
+    "error": "Something went wrong. Please try again.",
+    "contactDetails": "Contact Details",
+    "bookingDetails": "Booking Details",
+    "roomRequirements": "Room Requirements",
+    "emailRequired": "Email is required",
+    "pageDescription": "Planning a group event and need 10 or more rooms? Fill out the form below! Once we’ve received your request, our group booking team will be in touch."
+  },
+  "fields": {
+    "title": "Title",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "phone": "Phone Number",
+    "email": "Email Address",
+    "bookerType": "What type of booker are you?",
+    "stayPurpose": "Is your group staying for Business or Leisure?",
+    "isSchoolGroup": "Please tick this box if you are booking for a school or youth group.",
+    "visitReason": "What is the reason for your group’s visit?",
+    "hotel": "Hotel",
+    "checkInDate": "Check In",
+    "checkOutDate": "Check Out",
+    "package": "Package type",
+    "hasChildren": "Travelling/staying with children (2–15 years).",
+    "needsAccessibleRoom": "Accessible room is needed.",
+    "roomsSingle": "Single Occupancy",
+    "roomsDouble": "Double Occupancy",
+    "roomsTwin": "Twin",
+    "additionalInfo": "Additional information (optional)",
+    "continue": "Continue"
+  },
+  "placeholders": {
+    "hotel": "Enter a hotel",
+    "additionalInfo": "Let us know if you have any special requests..."
+  },
+  "buttons": {
+    "submit": "Submit Enquiry"
+  },
+  "contactDetails": {
+    "firstName": "First Name",
+    "firstNameValidation": "First name is required",
+    "lastName": "Last Name",
+    "lastNameValidation": "Last name is required",
+    "titleValidation": "Title is required",
+    "invalidEmail": "Please enter a valid email address",
+    "invalidPhone": "Please enter a valid phone number"
+  },
+  "booking": {
+    "bookerType": "What type of booker are you?",
+    "bookerOptions": {
+      "personal": "Personal",
+      "business": "Business",
+      "tmc": "Travel Management Company",
+      "agent": "Travel Agent/Tour Operator"
+    },
+    "companyName": "Company Name",
+    "stayPurpose": "Is your group staying for Business or Leisure?",
+    "purposeOptions": {
+      "business": "Business",
+      "leisure": "Leisure"
+    },
+    "schoolGroup": "Please tick this box if you are booking for a school or youth group.",
+    "visitReason": "What is the reason for your group’s visit?",
+    "selectReason": "Select a reason",
+    "reasonOptions": {
+      "wedding": "Wedding",
+      "event": "Event",
+      "sports": "Sports",
+      "other": "Other"
+    },
+    "bookingDetailsTitle": "Booking details",
+    "bookingDetailsNote": "Our team will try to accommodate your group’s preferences in terms of hotels and dates. If that’s not possible, we’ll do everything we can to offer the best alternatives.",
+    "hotel": "Hotel",
+    "hotelPlaceholder": "Enter a hotel",
+    "checkIn": "Check In",
+    "checkOut": "Check Out",
+    "package": "Package type",
+    "packageOptions": {
+      "breakfast": "Premier Inn Breakfast",
+      "mealDeal": "Meal deal (dinner, drink and breakfast)"
+    },
+    "bookerTypeRequired": "Please select a booker type.",
+    "companyNameRequired": "Company name is required.",
+    "stayPurposeRequired": "Please specify the purpose of stay.",
+    "visitReasonRequired": "Please select a reason for the group’s visit.",
+    "hotelRequired": "Please select a hotel.",
+    "checkInRequired": "Please select a check-in date.",
+    "checkOutRequired": "Please select a check-out date.",
+    "packageRequired": "Please select a package type"
+  },
+  "room": {
+    "description": "Select the number of rooms required by type and occupancy.",
+    "single": "Single Occupancy",
+    "singleDescription": "1 adult",
+    "double": "Double Occupancy",
+    "doubleDescription": "2 adults",
+    "twin": "Twin",
+    "twinDescription": "2 adults",
+    "hasChildren": "Travelling/staying with children (2–15 years)",
+    "family2": "Family of 2",
+    "family2Description": "1 adult + 1 child",
+    "family3A": "Family of 3",
+    "family3ADescription": "2 adults + 1 child",
+    "family3B": "Family of 3",
+    "family3BDescription": "1 adult + 2 children",
+    "family4": "Family of 4",
+    "family4Description": "2 adults + 2 children",
+    "needsAccessibleRoom": "Accessible room is needed",
+    "accessibleSingle": "Accessible Single",
+    "accessibleSingleDescription": "1 adult with accessibility needs",
+    "accessibleDouble": "Accessible Double",
+    "accessibleDoubleDescription": "2 adults with accessibility needs",
+    "accessibleTwin": "Accessible Twin",
+    "accessibleTwinDescription": "2 adults with accessibility needs",
+    "total": "Total",
+    "rooms": "room(s)",
+    "roomSelectionInvalid": "Please select at least one room.",
+    "invalidRoomCount": "Room count must be a positive number.",
+    "accessibleRoomRequired": "Please enter the number of accessible rooms.",
+    "childrenRoomRequired": "Please provide children room details.",
+    "accessibleRequirement": "Please select at least one accessible room.",
+    "familyRequirement": "Please select at least one family room.",
+    "standardRequirement": "Please select at least one standard room."
+  }
+}
