@@ -8,6 +8,7 @@
     "bookingDetails": "Booking Details",
     "roomRequirements": "Room Requirements",
     "emailRequired": "Email is required",
+    "sectionSaved": "Section saved successfully!",
     "pageDescription": "Planning a group event and need 10 or more rooms? Fill out the form below! Once we’ve received your request, our group booking team will be in touch."
   },
   "fields": {

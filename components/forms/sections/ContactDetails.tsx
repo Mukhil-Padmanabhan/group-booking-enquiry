@@ -65,9 +65,10 @@ export default function ContactDetails({ onContinue }: Props) {
 
       console.log('Errors:', fieldErrors);
       setSectionError('contact', true);
-      return;
+      return; 
+    } else {
+      onContinue?.()
     }
-    onContinue?.()
     setSectionError('contact', false);
   };
 

@@ -14,6 +14,8 @@ import { getFullSchema } from '@/lib/validationSchemas';
 import { useTranslations } from '@/i18n/client';
 import { useSubmitGroupBooking } from '@/hooks/useSubmitGroupBooking';
 import { useDraftStorage } from '@/hooks/useDraftStorage';
+import { toast } from 'sonner';
+
 
 export type GroupBookingFormValues = z.infer<ReturnType<typeof getFullSchema>>;
 
@@ -29,10 +31,11 @@ export default function GroupBookingForm() {
 
   const { submitBooking } = useSubmitGroupBooking();
   const { clearDraft, getProgress, loadSection } = useDraftStorage();
-  const [ , setProgress] = useState(0);
+  const [, setProgress] = useState(0);
   const [responseMessage, setResponseMessage] = useState<string | null>(null);
   const [openSection, setOpenSection] = useState<Section>('contact');
   const { setValue } = methods;
+  const sectionOrder: Section[] = ['contact', 'booking', 'rooms'];
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -58,7 +61,8 @@ export default function GroupBookingForm() {
     return () => clearInterval(interval);
   }, [getProgress]);
 
-  const triggerProgressUpdate = () => {
+  const triggerProgressUpdate = (current: Section) => {
+    handleSectionComplete(current)
     const updated = getProgress();
     setProgress(updated);
   };
@@ -77,6 +81,16 @@ export default function GroupBookingForm() {
     }
   };
 
+  const handleSectionComplete = (current: Section) => {
+    toast.success(t('form.sectionSaved'));
+    const currentIndex = sectionOrder.indexOf(current);
+    const next = sectionOrder[currentIndex + 1];
+    if (next) {
+      setOpenSection(next);
+    }
+    setProgress(getProgress());
+  };
+
   return (
     <>
       {/* <div className="w-full bg-gray-200 h-2 rounded overflow-hidden mb-4">
@@ -92,7 +106,6 @@ export default function GroupBookingForm() {
           role='form'
           onSubmit={(e) => {
             e.preventDefault();
-            console.log("SUBMIT")
             methods.handleSubmit(onSubmitHandler)(e);
           }}
         >
@@ -102,7 +115,7 @@ export default function GroupBookingForm() {
               isOpen={openSection === 'contact'}
               onToggle={() => setOpenSection(openSection === 'contact' ? null : 'contact')}
             >
-              <ContactDetails onContinue={triggerProgressUpdate} />
+              <ContactDetails onContinue={() => triggerProgressUpdate('contact')} />
             </Accordion>
 
             <Accordion
@@ -110,7 +123,7 @@ export default function GroupBookingForm() {
               isOpen={openSection === 'booking'}
               onToggle={() => setOpenSection(openSection === 'booking' ? null : 'booking')}
             >
-              <BookingDetails onContinue={triggerProgressUpdate}/>
+              <BookingDetails onContinue={() => triggerProgressUpdate('booking')} />
             </Accordion>
 
             <Accordion
@@ -118,7 +131,7 @@ export default function GroupBookingForm() {
               isOpen={openSection === 'rooms'}
               onToggle={() => setOpenSection(openSection === 'rooms' ? null : 'rooms')}
             >
-              <RoomRequirements onContinue={triggerProgressUpdate}/>
+              <RoomRequirements onContinue={() => triggerProgressUpdate('rooms')} />
             </Accordion>
           </div>
 

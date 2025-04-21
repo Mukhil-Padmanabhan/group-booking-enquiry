@@ -16,7 +16,7 @@ const getNumber = (value: unknown): number =>
 
 type Props = {
     onContinue?: () => void;
-  };
+};
 
 export default function RoomRequirements({ onContinue }: Props) {
     const t = useTranslations();
@@ -36,7 +36,7 @@ export default function RoomRequirements({ onContinue }: Props) {
     const watchFields = useWatch<GroupBookingFormValues>({ control });
     const handleContinue = async () => {
         setCustomError(null);
-
+        saveSection('group', getValues());
         const {
             roomsSingle,
             roomsDouble,
@@ -89,10 +89,9 @@ export default function RoomRequirements({ onContinue }: Props) {
         ]);
 
         setSectionError('rooms', !valid);
-        if (!valid) return;
 
-        saveSection('group', getValues());
-        onContinue?.();
+        if (!valid) { return } else { onContinue?.(); };
+
     };
 
     const totalRooms =

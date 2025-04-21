@@ -1,11 +1,10 @@
-// app/[locale]/layout.tsx
 import { ReactNode } from 'react';
 import { Inter } from 'next/font/google';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 
 const inter = Inter({ subsets: ['latin'] });
-
+export const revalidate = 60;
 export const metadata: Metadata = {
   title: 'Group Booking',
   description: 'Premier Inn Group Booking Form',
@@ -23,7 +22,7 @@ export default async function LocaleLayout({
   const { locale } = await params;
 
   if (!SUPPORTED_LOCALES.includes(locale)) {
-    notFound(); // Throws 404 if unsupported locale
+    notFound(); 
   }
 
   return (

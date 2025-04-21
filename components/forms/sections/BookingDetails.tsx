@@ -102,8 +102,10 @@ export default function BookingDetails({ onContinue }: Props) {
 
             console.log('Field-level errors:', fieldErrors);
             return;
+        } else {
+            onContinue?.()
         }
-        onContinue?.()
+
     };
 
     return (
