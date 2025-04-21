@@ -87,14 +87,14 @@ export default function BookingDetails({ onContinue }: Props) {
             'checkInDate',
             'checkOutDate',
             'packageType',
-            ...(bookerType !== 'Personal' ? ['companyName'] : [])
+            ...(bookerType !== 'Personal' ? ['companyName' as keyof GroupBookingFormValues] : [])
         ];
         const isValid = await trigger(fieldsToValidate);
         if (!isValid) {
             console.warn('ERROR - Validation failed');
             const fieldErrors = fieldsToValidate.reduce((acc, field) => {
                 const { error } = getFieldState(field as keyof GroupBookingFormValues);
-                if (error) {
+                if (error?.message) {
                     acc[field] = error.message;
                 }
                 return acc;

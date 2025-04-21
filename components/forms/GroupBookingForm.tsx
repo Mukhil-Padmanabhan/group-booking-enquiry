@@ -77,10 +77,6 @@ export default function GroupBookingForm() {
     }
   };
 
-  const onInvalidHandler = (errors: FieldErrors<GroupBookingFormValues>) => {
-    console.warn('Validation failed:', errors);
-  };
-
   return (
     <>
       {/* <div className="w-full bg-gray-200 h-2 rounded overflow-hidden mb-4">
@@ -97,7 +93,7 @@ export default function GroupBookingForm() {
           onSubmit={(e) => {
             e.preventDefault();
             console.log("SUBMIT")
-            methods.handleSubmit(onSubmitHandler, onInvalidHandler)(e);
+            methods.handleSubmit(onSubmitHandler)(e);
           }}
         >
           <div className="bg-white shadow-sm rounded-lg divide-y divide-gray-200">

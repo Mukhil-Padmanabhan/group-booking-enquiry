@@ -1,28 +1,36 @@
 // app/[locale]/layout.tsx
-
 import { ReactNode } from 'react';
+import { Inter } from 'next/font/google';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 
-const SUPPORTED_LOCALES = ['en', 'de'];
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Group Booking',
   description: 'Premier Inn Group Booking Form',
 };
 
-export default function LocaleLayout({
+const SUPPORTED_LOCALES = ['en', 'de'];
+
+export default async function LocaleLayout({
   children,
   params,
 }: {
   children: ReactNode;
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }) {
-  const locale = params.locale;
+  const { locale } = await params;
 
   if (!SUPPORTED_LOCALES.includes(locale)) {
-    notFound();
+    notFound(); // Throws 404 if unsupported locale
   }
 
-  return <>{children}</>;
+  return (
+    <html lang={locale} suppressHydrationWarning>
+      <body className={`${inter.className} bg-white text-black antialiased`}>
+        {children}
+      </body>
+    </html>
+  );
 }
