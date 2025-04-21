@@ -23,7 +23,7 @@
     "hotel": "Hotel",
     "checkInDate": "Check In",
     "checkOutDate": "Check Out",
-    "package": "Package type",
+    "packageType": "Package type",
     "hasChildren": "Travelling/staying with children (2–15 years).",
     "needsAccessibleRoom": "Accessible room is needed.",
     "roomsSingle": "Single Occupancy",
@@ -77,7 +77,7 @@
     "hotelPlaceholder": "Enter a hotel",
     "checkIn": "Check In",
     "checkOut": "Check Out",
-    "package": "Package type",
+    "packageType": "Package type",
     "packageOptions": {
       "breakfast": "Premier Inn Breakfast",
       "mealDeal": "Meal deal (dinner, drink and breakfast)"

@@ -74,7 +74,7 @@ export const getBookingSchema = (t: (key: string) => string) =>
             })
             .min(1, { message: t('booking.checkOutRequired') }),
 
-        package: z
+            packageType: z
             .string({
                 required_error: t('booking.packageRequired'),
                 invalid_type_error: t('booking.packageRequired')

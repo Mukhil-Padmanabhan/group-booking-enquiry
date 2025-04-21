@@ -32,7 +32,7 @@ export const useDraftStorage = () => {
 
     const sections = {
       contact: ['title', 'firstName', 'lastName', 'phone', 'email'],
-      booking: ['bookerType', 'stayPurpose', 'visitReason', 'hotel', 'checkInDate', 'checkOutDate', 'package'],
+      booking: ['bookerType', 'stayPurpose', 'visitReason', 'hotel', 'checkInDate', 'checkOutDate', 'packageType'],
       rooms: [
         'roomsSingle', 'roomsDouble', 'roomsTwin',
         'family2', 'family3A', 'family3B', 'family4',

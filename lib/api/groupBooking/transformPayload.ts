@@ -13,7 +13,7 @@ export function transformGroupBookingPayload(body: GroupBookingFormValues) {
       visitReason: body.visitReason,
       hotel: body.hotel,
       isSchoolGroup: !!body.isSchoolGroup,
-      package: body.package,
+      package: body.packageType,
   
       checkInDate: new Date(body.checkInDate),
       checkOutDate: new Date(body.checkOutDate),

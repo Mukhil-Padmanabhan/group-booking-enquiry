@@ -10,7 +10,7 @@ export interface GroupBookingPayload {
     visitReason: string;
     hotel: string;
     isSchoolGroup?: boolean;
-    package: string;
+    packageType: string;
   
     checkInDate: string;
     checkOutDate: string;

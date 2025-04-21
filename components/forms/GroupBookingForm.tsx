@@ -29,7 +29,7 @@ export default function GroupBookingForm() {
 
   const { submitBooking } = useSubmitGroupBooking();
   const { clearDraft, getProgress, loadSection } = useDraftStorage();
-  const [progress, setProgress] = useState(0);
+  const [ , setProgress] = useState(0);
   const [responseMessage, setResponseMessage] = useState<string | null>(null);
   const [openSection, setOpenSection] = useState<Section>('contact');
   const { setValue } = methods;

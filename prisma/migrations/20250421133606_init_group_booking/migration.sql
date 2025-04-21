@@ -43,7 +43,7 @@ CREATE TABLE "new_GroupBooking" (
     "additionalInfo" TEXT,
     "locale" TEXT NOT NULL
 );
-INSERT INTO "new_GroupBooking" ("accessibleDouble", "accessibleSingle", "accessibleTwin", "additionalInfo", "checkInDate", "checkOutDate", "createdAt", "email", "family2", "family3A", "family3B", "family4", "firstName", "id", "isSchoolGroup", "lastName", "locale", "package", "phone", "roomsDouble", "roomsSingle", "roomsTwin", "title", "visitReason") SELECT "accessibleDouble", "accessibleSingle", "accessibleTwin", "additionalInfo", "checkInDate", "checkOutDate", "createdAt", "email", "family2", "family3A", "family3B", "family4", "firstName", "id", "isSchoolGroup", "lastName", "locale", "package", "phone", "roomsDouble", "roomsSingle", "roomsTwin", "title", "visitReason" FROM "GroupBooking";
+INSERT INTO "new_GroupBooking" ("accessibleDouble", "accessibleSingle", "accessibleTwin", "additionalInfo", "checkInDate", "checkOutDate", "createdAt", "email", "family2", "family3A", "family3B", "family4", "firstName", "id", "isSchoolGroup", "lastName", "locale", "packageType", "phone", "roomsDouble", "roomsSingle", "roomsTwin", "title", "visitReason") SELECT "accessibleDouble", "accessibleSingle", "accessibleTwin", "additionalInfo", "checkInDate", "checkOutDate", "createdAt", "email", "family2", "family3A", "family3B", "family4", "firstName", "id", "isSchoolGroup", "lastName", "locale", "packageType", "phone", "roomsDouble", "roomsSingle", "roomsTwin", "title", "visitReason" FROM "GroupBooking";
 DROP TABLE "GroupBooking";
 ALTER TABLE "new_GroupBooking" RENAME TO "GroupBooking";
 PRAGMA foreign_keys=ON;

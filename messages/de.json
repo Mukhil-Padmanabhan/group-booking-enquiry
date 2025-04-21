@@ -22,7 +22,7 @@
     "hotel": "Hotel",
     "checkInDate": "Check-in",
     "checkOutDate": "Check-out",
-    "package": "Pakettyp",
+    "packageType": "Pakettyp",
     "hasChildren": "Reisen/übernachten mit Kindern (2–15 Jahre).",
     "needsAccessibleRoom": "Barrierefreies Zimmer wird benötigt.",
     "roomsSingle": "Einzelbelegung",

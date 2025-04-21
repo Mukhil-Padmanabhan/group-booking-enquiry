@@ -1,4 +1,4 @@
-import { InputHTMLAttributes, forwardRef, useId } from 'react';
+import { InputHTMLAttributes, forwardRef } from 'react';
 import { useInputStyle } from '@/hooks/useInputStyle';
 
 type InputProps = InputHTMLAttributes<HTMLInputElement> & {

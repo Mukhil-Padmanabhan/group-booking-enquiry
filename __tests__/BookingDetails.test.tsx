@@ -60,7 +60,7 @@ describe('BookingDetails', () => {
         expect(screen.getByText('booking.bookingDetailsTitle')).toBeInTheDocument();
         expect(screen.getByText('booking.checkIn')).toBeInTheDocument();
         expect(screen.getByText('booking.checkOut')).toBeInTheDocument();
-        expect(screen.getByText('booking.package')).toBeInTheDocument();
+        expect(screen.getByText('booking.packageType')).toBeInTheDocument();
     });
 
     it('shows company name input when bookerType is not Personal', async () => {

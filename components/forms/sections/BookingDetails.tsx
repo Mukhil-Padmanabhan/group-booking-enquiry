@@ -37,6 +37,13 @@ export default function BookingDetails({ onContinue }: Props) {
         getValues,
     } = useFormContext<GroupBookingFormValues>();
     const [continueClicked, setContinueClicked] = useState(false)
+    const bookerType = useWatch({ name: 'bookerType', control });
+    const stayPurpose = useWatch({ name: 'stayPurpose', control });
+    const visitReason = useWatch({ name: 'visitReason', control });
+    const hotel = useWatch({ name: 'hotel', control });
+    const checkInDate = useWatch({ name: 'checkInDate', control });
+    const checkOutDate = useWatch({ name: 'checkOutDate', control });
+    const packageType = useWatch({ name: 'packageType', control });
 
     useEffect(() => {
 
@@ -49,7 +56,7 @@ export default function BookingDetails({ onContinue }: Props) {
                     'hotel',
                     'checkInDate',
                     'checkOutDate',
-                    'package',
+                    'packageType',
                 ];
 
                 const isValid = await trigger(fieldsToValidate);
@@ -61,19 +68,11 @@ export default function BookingDetails({ onContinue }: Props) {
         return () => setContinueClicked(false)
 
     }, [
-        useWatch({ name: 'bookerType', control }),
-        useWatch({ name: 'stayPurpose', control }),
-        useWatch({ name: 'visitReason', control }),
-        useWatch({ name: 'hotel', control }),
-        useWatch({ name: 'checkInDate', control }),
-        useWatch({ name: 'checkOutDate', control }),
-        useWatch({ name: 'package', control }),
-        continueClicked
+        bookerType, stayPurpose, visitReason, hotel, checkInDate, checkOutDate, packageType,
+        continueClicked, setSectionError, trigger
     ]);
 
-    const bookerType = useWatch({ control, name: 'bookerType' });
     const today = format(new Date(), 'yyyy-MM-dd');
-    const checkInDate = useWatch({ control, name: 'checkInDate' });
 
     const minCheckOutDate = checkInDate || today;
 
@@ -87,7 +86,7 @@ export default function BookingDetails({ onContinue }: Props) {
             'hotel',
             'checkInDate',
             'checkOutDate',
-            'package',
+            'packageType',
             ...(bookerType !== 'Personal' ? ['companyName'] : [])
         ];
         const isValid = await trigger(fieldsToValidate);
@@ -209,10 +208,10 @@ export default function BookingDetails({ onContinue }: Props) {
             </div>
 
             <RadioGroup
-                name="package"
-                id={'package'}
-                label={t('booking.package')}
-                error={errors.package?.message}
+                name="packageType"
+                id={'packageType'}
+                label={t('booking.packageType')}
+                error={errors.packageType?.message}
                 options={[
                     { label: t('booking.packageOptions.breakfast'), value: 'Premier Inn Breakfast' },
                     { label: t('booking.packageOptions.mealDeal'), value: 'Meal deal' }
