@@ -31,10 +31,11 @@ export default function GroupBookingForm() {
   });
 
   const { submitBooking } = useSubmitGroupBooking();
-  const { clearDraft, getProgress, loadSection } = useDraftStorage();
-  const [, setProgress] = useState(0);
+  const { clearDraft, loadSection, saveSection } = useDraftStorage();
+  const [progress, setProgress] = useState(0);
   const [responseMessage, setResponseMessage] = useState<string | null>(null);
   const [openSection, setOpenSection] = useState<Section>('contact');
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const { setValue } = methods;
   const sectionOrder: Section[] = ['contact', 'booking', 'rooms'];
 
@@ -50,25 +51,18 @@ export default function GroupBookingForm() {
         });
       }
     }
+    const progress = loadSection('progress');
+    setProgress(progress)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  useEffect(() => {
-    setProgress(getProgress());
-    const interval = setInterval(() => {
-      setProgress(getProgress());
-    }, 1000);
-
-    return () => clearInterval(interval);
-  }, [getProgress]);
 
   const triggerProgressUpdate = (current: Section) => {
     handleSectionComplete(current)
-    const updated = getProgress();
-    setProgress(updated);
   };
 
   const onSubmitHandler = async (data: GroupBookingFormValues) => {
+    setIsSubmitting(true);
     try {
       setResponseMessage(null);
       await submitBooking(data);
@@ -79,29 +73,32 @@ export default function GroupBookingForm() {
     } catch (error) {
       const message = error instanceof Error ? error.message : 'Unknown error';
       setResponseMessage(`ERROR - ${message}`);
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
   const handleSectionComplete = (current: Section) => {
     toast.success(t('form.sectionSaved'));
+    saveSection('progress', progress + 33.3)
+    setProgress(progress + 33.3)
     const currentIndex = sectionOrder.indexOf(current);
     const next = sectionOrder[currentIndex + 1];
     if (next) {
       setOpenSection(next);
     }
-    setProgress(getProgress());
   };
 
   return (
     <>
-      {/* <div className="w-full bg-gray-200 h-2 rounded overflow-hidden mb-4">
+      <div className="w-full bg-gray-200 h-2 rounded overflow-hidden mb-4">
         <div
           className="bg-purple-600 h-full transition-all duration-300"
           style={{ width: `${progress}%` }}
           role="progressbar"
         />
-      </div> */}
-    <LanguageSwitcher />
+      </div>
+      <LanguageSwitcher />
       <FormProvider {...methods}>
         <form
           role='form'
@@ -110,7 +107,7 @@ export default function GroupBookingForm() {
             methods.handleSubmit(onSubmitHandler)(e);
           }}
         >
-          <div className="bg-white shadow-sm rounded-lg divide-y divide-gray-200">
+          <div className="acc-bg bg-white dark:text-white shadow-sm rounded-lg divide-y divide-gray-200">
             <Accordion
               title={t('form.contactDetails')}
               isOpen={openSection === 'contact'}
@@ -139,9 +136,17 @@ export default function GroupBookingForm() {
           <div className="mt-6 text-center">
             <button
               type="submit"
-              className="bg-purple-600 text-white px-6 py-2 rounded hover:bg-purple-700 transition-colors"
+              disabled={isSubmitting}
+              className="relative bg-purple-600 text-white px-6 py-2 rounded hover:bg-purple-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              {t('form.submit')}
+              {isSubmitting ? (
+                <div className="flex items-center justify-center gap-2">
+                  <span className="loader border-white"></span>
+                  {t('form.submit')}
+                </div>
+              ) : (
+                t('form.submit')
+              )}
             </button>
             {responseMessage && (
               <p

@@ -15,7 +15,7 @@ export default function Accordion({ title, isOpen, onToggle, children }: Accordi
     const Icon = isOpen ? FaChevronUp : FaChevronDown;
 
     return (
-        <section className="mb-1 rounded shadow-sm border border-gray-200" data-testid="accordion">
+        <section className="mb-1 rounded shadow-sm border border-gray-200 accordian-theme" data-testid="accordion">
             <button
                 type="button"
                 className={clsx(

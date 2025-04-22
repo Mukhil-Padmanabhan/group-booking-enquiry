@@ -42,7 +42,7 @@ export const useDraftStorage = () => {
 
     let filledSections = 0;
 
-    for (const [section, fields] of Object.entries(sections)) {
+    for (const [, fields] of Object.entries(sections)) {
       const hasAnyFieldFilled = fields.some((field) => {
         const value = saved[field];
         return value !== undefined && value !== '' && value !== 0 && value !== false;

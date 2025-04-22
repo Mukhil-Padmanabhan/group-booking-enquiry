@@ -17,7 +17,7 @@ export default function RadioGroup({ name, options, label, error, id }: RadioGro
     watch,
   } = useFormContext();
   const groupId = id;
-  const selectedValue = watch(name); // detect selected value
+  const selectedValue = watch(name);
 
   return (
     <fieldset className="space-y-2">
@@ -52,7 +52,6 @@ export default function RadioGroup({ name, options, label, error, id }: RadioGro
                 type="radio"
                 id={`${groupId}-${option.value}`}
                 value={option.value}
-                className="text-purple-600 focus:ring-2 ring-purple-500"
               />
               <span className="text-sm">{option.label}</span>
             </label>

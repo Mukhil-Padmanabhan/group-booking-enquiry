@@ -7,7 +7,7 @@ type FormErrorContextType = {
   setSectionError: (section: string, hasError: boolean) => void;
 };
 
-const FormErrorContext = createContext<FormErrorContextType | undefined>(undefined);
+export const FormErrorContext = createContext<FormErrorContextType | undefined>(undefined);
 
 export const FormErrorProvider = ({ children }: { children: ReactNode }) => {
   const [errors, setErrors] = useState<Record<string, boolean>>({});
