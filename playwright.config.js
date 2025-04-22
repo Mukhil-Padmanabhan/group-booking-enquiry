@@ -11,7 +11,7 @@ module.exports = defineConfig({
   use: {
     trace: 'on-first-retry',
     video: 'on',
-    headless: false,
+    headless: true,
   },
   projects: [
     {
