@@ -2,6 +2,7 @@ import { ReactNode } from 'react';
 import { Inter } from 'next/font/google';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
+import ThemeToggle from '@/components/ui/ThemeToggle';
 
 const inter = Inter({ subsets: ['latin'] });
 export const revalidate = 60;
@@ -22,12 +23,15 @@ export default async function LocaleLayout({
   const { locale } = await params;
 
   if (!SUPPORTED_LOCALES.includes(locale)) {
-    notFound(); 
+    notFound();
   }
 
   return (
     <html lang={locale} suppressHydrationWarning>
       <body className={`${inter.className} bg-white text-black antialiased`}>
+        <header className="p-4 flex justify-end items-center">
+          <ThemeToggle />
+        </header>
         {children}
       </body>
     </html>
