@@ -31,7 +31,11 @@
     "roomsDouble": "Double Occupancy",
     "roomsTwin": "Twin",
     "additionalInfo": "Additional information (optional)",
-    "continue": "Continue"
+    "additionalInfoDescription": "Let us know if you have any additional information or special requests. If you do not require the same number of rooms on each night of your stay, please state below the number and type of rooms required each night",
+    "continue": "Continue",
+    "seeRoomTypes": "See room types",
+    "childRoomRule": "At least one adult (18+) must be in every room with a child under 16 years.",
+    "readOccupancy": "Read occupancy policy"
   },
   "placeholders": {
     "hotel": "Enter a hotel",

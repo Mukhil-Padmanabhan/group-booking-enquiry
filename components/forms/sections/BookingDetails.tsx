@@ -208,7 +208,7 @@ export default function BookingDetails({ onContinue }: Props) {
                     />
                 </FieldWrapper>
             </div>
-
+            
             <RadioGroup
                 name="packageType"
                 id={'packageType'}
@@ -219,6 +219,7 @@ export default function BookingDetails({ onContinue }: Props) {
                     { label: t('booking.packageOptions.mealDeal'), value: 'Meal deal' }
                 ]}
             />
+            
 
             <button
                 type="button"

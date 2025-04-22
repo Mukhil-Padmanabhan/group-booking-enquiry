@@ -30,7 +30,11 @@
     "roomsDouble": "Doppelbelegung",
     "roomsTwin": "Zweibettzimmer",
     "additionalInfo": "Zusätzliche Informationen (optional)",
-    "continue": "Weiter"
+    "additionalInfoDescription": "Teilen Sie uns mit, ob Sie zusätzliche Informationen oder besondere Wünsche haben. Wenn Sie nicht an jedem Tag Ihres Aufenthalts die gleiche Anzahl an Zimmern benötigen, geben Sie bitte unten die Anzahl und Art der benötigten Zimmer pro Nacht an.",
+    "continue": "Weiter",
+    "seeRoomTypes": "Zimmerarten anzeigen",
+    "childRoomRule": "Mindestens ein Erwachsener (18+) muss sich in jedem Zimmer mit einem Kind unter 16 Jahren befinden.",
+    "readOccupancy": "Belegungsrichtlinie lesen"
   },
   "placeholders": {
     "hotel": "Hotel eingeben",

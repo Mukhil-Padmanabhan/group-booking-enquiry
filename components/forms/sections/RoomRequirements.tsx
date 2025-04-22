@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useFormContext, useWatch } from 'react-hook-form';
 import { GroupBookingFormValues } from '../GroupBookingForm';
 import Checkbox from '@/components/ui/Checkbox';
@@ -34,6 +34,24 @@ export default function RoomRequirements({ onContinue }: Props) {
     } = useFormContext<GroupBookingFormValues>();
 
     const watchFields = useWatch<GroupBookingFormValues>({ control });
+
+    useEffect(() => {
+        if (!watchFields.hasChildren) {
+            setValue('family2', 0);
+            setValue('family3A', 0);
+            setValue('family3B', 0);
+            setValue('family4', 0);
+        }
+    }, [watchFields.hasChildren, setValue]);
+
+    useEffect(() => {
+        if (!watchFields.needsAccessibleRoom) {
+            setValue('accessibleSingle', 0);
+            setValue('accessibleDouble', 0);
+            setValue('accessibleTwin', 0);
+        }
+    }, [watchFields.needsAccessibleRoom, setValue]);
+
     const handleContinue = async () => {
         setCustomError(null);
         saveSection('group', getValues());
@@ -108,8 +126,8 @@ export default function RoomRequirements({ onContinue }: Props) {
 
     return (
         <div className="space-y-6 text-black">
-            <p className="text-sm text-gray-700">{t('room.description')}</p>
-
+            <span className="text-sm text-gray-700">{t('room.description')}</span><br />
+            <div className='mb-4'><a className="underline text-sm" href="https://www.premierinn.com/gb/en/sleep/our-rooms.html">{t('fields.seeRoomTypes')}</a></div>
             <div className="space-y-4">
                 <CounterInput
                     label={t('room.single')}
@@ -134,6 +152,8 @@ export default function RoomRequirements({ onContinue }: Props) {
             <Checkbox id={'hasChildren'} {...register('hasChildren')} label={t('room.hasChildren')} />
             {watchFields.hasChildren && (
                 <div className="space-y-4">
+                    <span>{t('fields.childRoomRule')}</span>
+                    <div className='mb-4'><a href="https://www.premierinn.com/gb/en/terms/booking-terms-and-conditions.html" className='underline text-sm'>{t('fields.readOccupancy')}</a></div>
                     <CounterInput
                         label={t('room.family2')}
                         description={t('room.family2Description')}
@@ -197,6 +217,7 @@ export default function RoomRequirements({ onContinue }: Props) {
             </div>
 
             <FieldWrapper label={t('fields.additionalInfo')} name="additionalInfo">
+                <div className='className="block mb-4 text-sm text-gray-00"'>{t('fields.additionalInfoDescription')}</div>
                 <Textarea
                     rows={4}
                     {...register('additionalInfo')}
