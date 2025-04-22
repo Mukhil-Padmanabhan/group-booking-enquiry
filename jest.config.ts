@@ -9,6 +9,7 @@ const customJestConfig = {
   testEnvironment: 'jsdom',
   transformIgnorePatterns: ['/node_modules/(?!(your-esm-package)/)'],
   testPathIgnorePatterns: ['<rootDir>/e2e/', '<rootDir>/__e2e__/'],
+  testMatch: ['<rootDir>/__tests__/*.test.tsx'],
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/$1',
     '\\.(css|less|scss|sass)$': 'identity-obj-proxy'
