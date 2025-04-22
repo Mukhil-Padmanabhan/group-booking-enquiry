@@ -1,4 +1,3 @@
-// types/layout.ts
 import { ReactNode } from 'react';
 
 export type LayoutProps = {

@@ -6,7 +6,6 @@ import { useDraftStorage } from '@/hooks/useDraftStorage';
 import { GroupBookingFormValues } from '@/components/forms/GroupBookingForm';
 import ContactDetails from '@/components/forms/sections/ContactDetails';
 
-// Mock dependencies
 jest.mock('@/i18n/client', () => ({
   useTranslations: jest.fn(() => (key: string) => key),
 }));

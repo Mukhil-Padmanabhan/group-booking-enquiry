@@ -2,9 +2,7 @@ import { render, screen, fireEvent, waitFor, act } from '@testing-library/react'
 import BookingDetails from '@/components/forms/sections/BookingDetails';
 import { FormProvider, useForm } from 'react-hook-form';
 import { FormErrorProvider } from '@/contexts/FormErrorContext';
-import { GroupBookingFormValues } from '@/components/forms/GroupBookingForm';
 
-// Mocks
 const mockSaveSection = jest.fn();
 const mockLoadSection = jest.fn(() => ({}));
 
@@ -25,12 +23,11 @@ jest.mock('react-hook-form', () => {
       ...original,
       useFormContext: () => ({
         ...original.useFormContext(),
-        trigger: jest.fn(() => Promise.resolve(false)), // simulate validation failure
+        trigger: jest.fn(() => Promise.resolve(false)), 
       }),
     };
   });
 
-// Helper wrapper for RHF
 const renderWithForm = (children: React.ReactNode) => {
     const Wrapper = () => {
         const methods = useForm();
@@ -89,10 +86,8 @@ describe('BookingDetails', () => {
 
         const continueButton = screen.getByRole('button', { name: 'fields.continue' });
 
-        // fireEvent is sync, but updates trigger async effects inside useEffect
         fireEvent.click(continueButton);
 
-        // wait for the log to occur (due to async trigger inside useEffect)
         await waitFor(() => {
             expect(consoleWarnMock).toHaveBeenCalledWith('ERROR - Validation failed');
         });

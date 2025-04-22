@@ -45,7 +45,7 @@ describe('CounterInput', () => {
     expect(onChange).toHaveBeenCalledWith(1);
 
     fireEvent.click(screen.getByRole('button', { name: /Increase Guests/i }));
-    expect(onChange).toHaveBeenCalledWith(1); // should not exceed max
+    expect(onChange).toHaveBeenCalledWith(1);
   });
 
   it('disables buttons when disabled is true', () => {

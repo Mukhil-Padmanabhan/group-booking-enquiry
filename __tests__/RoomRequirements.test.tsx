@@ -2,11 +2,9 @@ import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import { useForm, FormProvider } from 'react-hook-form';
 import { useTranslations } from '@/i18n/client';
 import { FormErrorContext } from '@/contexts/FormErrorContext';
-import { useDraftStorage } from '@/hooks/useDraftStorage';
 import RoomRequirements from '@/components/forms/sections/RoomRequirements';
 import { GroupBookingFormValues } from '@/components/forms/GroupBookingForm';
 
-// Mock dependencies
 jest.mock('@/i18n/client', () => ({
   useTranslations: jest.fn(() => (key: string) => key),
 }));
